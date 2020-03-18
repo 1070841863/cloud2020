@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pro.springcloud.dao.PaymentDao">
+    <!--//写操作-->
+    <!--public int create(Payment payment);-->
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment values(null,#{pname})
+    </insert>
+    <!--public Payment getPaymentById(@Param("id") Integer id);-->
+    <resultMap id="BaseResultMap" type="com.pro.springcloud.pojo.Payment">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <id column="pname" property="pname" jdbcType="VARCHAR"></id>
+    </resultMap>
+
+    <select id="getPaymentById" parameterType="Integer" resultMap="BaseResultMap">
+        select * from payment where id=#{id}
+    </select>
+</mapper>
