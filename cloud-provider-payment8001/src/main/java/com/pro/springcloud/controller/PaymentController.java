@@ -42,7 +42,7 @@ public class PaymentController {
 
 
     @GetMapping("/payment/get/{id}")
-    public CommonResult create(@PathVariable("id")Integer id){
+    public CommonResult get(@PathVariable("id")Integer id){
         Payment payment = paymentService.getPaymentById(id);
         log.info("******查询结果:"+payment);
         if(payment!=null){
@@ -66,6 +66,23 @@ public class PaymentController {
         }
 
         return this.discoveryClient;
+    }
+
+
+    @GetMapping("/payment/lb")
+    public  String paymentLb(){
+        return serverPort;
+    }
+
+
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return  serverPort;
     }
 
 }
