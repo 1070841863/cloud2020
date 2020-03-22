@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-customer-feign-hystrix-service
+
+eureka:
+  client:
+    #表示是否将自己注册进eurekaServer 默认为true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka  #单机版
+logging:
+  level:
+    #feign日志以什么级别进行监控哪个接口
+    com.pro.springcloud.service.OrderHystrixService: debug
+#开启整合
+feign:
+  hystrix:
+    enabled: true
