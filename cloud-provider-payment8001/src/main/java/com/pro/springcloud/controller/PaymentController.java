@@ -53,6 +53,11 @@ public class PaymentController {
     }
 
 
+    @GetMapping("/payment/lb")
+    public  String paymentLb(){
+        return serverPort;
+    }
+
     @GetMapping("/payment/discovery")
     public Object discoveryClient(){
         List<String> services = discoveryClient.getServices();
@@ -69,10 +74,7 @@ public class PaymentController {
     }
 
 
-    @GetMapping("/payment/lb")
-    public  String paymentLb(){
-        return serverPort;
-    }
+
 
 
     @GetMapping("/payment/feign/timeout")
