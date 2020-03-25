@@ -13,6 +13,11 @@
 
 
     <dependencies>
+        <!--包含了sleth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.test.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
