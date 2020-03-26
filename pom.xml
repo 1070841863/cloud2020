@@ -16,7 +16,6 @@
       <module>cloud-provider-payment8002</module>
     <module>cloud-provider-payment8004</module>
       <module>cloud-customer-zk-order80</module>
-      <module>cloud-provider-payment8006</module>
       <module>cloud-providerconsul-payment8006</module>
       <module>cloud-customerconsul-order-80</module>
       <module>cloud-customer-feign-order80</module>
@@ -30,6 +29,9 @@
       <module>cloud-stream-rabbitmq-provider8801</module>
       <module>cloud-stream-rabbitmq-customer8802</module>
       <module>cloud-stream-rabbitmq-customer8803</module>
+    <module>cloudalibaba-provider-payment9001</module>
+    <module>cloudalibaba-provider-payment9002</module>
+    <module>cloudalibaba-customer-order83</module>
   </modules>
   <packaging>pom</packaging>
 
